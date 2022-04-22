@@ -14,6 +14,9 @@ html {
 img {
     width: auto;
 }
+.none {
+    display: none !important;
+}
 
 /* HEADER  */
 header {
@@ -60,8 +63,8 @@ main {
     align-content: flex-start;
 }
 .grid-item {
-    width: calc(100% / 8);
-    height: calc(100% / 8);
+    width: calc(100% / 10);
+    height: calc(100% / 10);
     border: 1px solid black;
     display: flex;
     justify-content: center;
