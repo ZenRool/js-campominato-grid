@@ -1,34 +1,44 @@
 // MAIN Function
 const btnClick = () => {
-    const gridSize = 100;
     const gridArray = [];
-    for (let i = 0 ; i < gridSize ; i++) {
-        gridArray.push(i+1);
-        console.log(1);
+    let gridSize = 0
+    const lv = document.getElementById("levels").value;
+    switch(lv) {
+        case 'normal':
+            gridSize = 100;
+            break;
+        case 'hard':
+            gridSize = 81;
+            break;
+        case 'crazy':
+            gridSize = 49;
+            break;
+        default:
+            gridSize = 100;     
     }
-    console.log(gridArray);
     const gridContainer = document.querySelector(".grid-container");
     gridContainer.innerHTML = "";
-    for (let i = 0; i < gridArray.length; i++) {
-        const thisNumber = gridArray[i];
+    for (let i = 0; i < gridSize; i++) {
+        gridArray.push(i+1)
 
-        const domElement = generateGridItem(thisNumber)
+        const box = generateGridItem(i+1, lv);
 
-        domElement.addEventListener("click", function() {
+        box.addEventListener("click", function() {
             this.classList.add("active");
         });
 
-        gridContainer.append(domElement);
-        gridContainer.classList.remove("none");
+        gridContainer.append(box);
     }    
+    gridContainer.classList.remove("none");
 
 
 }
 
-function generateGridItem(number) {
+function generateGridItem(number , lv) {
     const newElement = document.createElement("div");
 
     newElement.classList.add("grid-item");
+    newElement.classList.add(lv);
     
     newElement.innerHTML = `<span>${number}</span>`
 

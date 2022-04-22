@@ -55,7 +55,6 @@ main {
 .grid-container {
     height: 600px;
     width: 600px;
-    border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -63,15 +62,28 @@ main {
     align-content: flex-start;
 }
 .grid-item {
-    width: calc(100% / 10);
-    height: calc(100% / 10);
+
     border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+/* levels  */
+.normal {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+.hard {
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+.crazy {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+}
 .grid-item.active {
     background-color: var(--cell-bg-color);
+    color: white;
 }
 footer {
     display: flex;
