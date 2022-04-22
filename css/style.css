@@ -1,0 +1,10 @@
+:root {
+    --main-bg-color: #7fffd4;
+    --cell-bg-color: #6395ed;
+}
+/* RESET  */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+}
